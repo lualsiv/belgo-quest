@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="belgoquest.Pesquisas"
+			 xmlns:custom="clr-namespace:belgoquest.CustomControls;assembly=belgo-quest">
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Pesquisas" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" />
+
+			<custom:BindableRadioGroup ItemsSource="{Binding Contents}" SelectedIndex="{Binding SelectedIndex}" VerticalOptions="Start" Text="Nome"/>
+<!--			<ListView ItemsSource="{Binding Contents}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<custom:CustomRadioButton Text="{Binding Nome}" TextColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>-->
+			<Button x:Name="btnContinuar" Text="Continuar"/>
+		</StackLayout>
+
+
+			
+	</ContentPage.Content>
+</ContentPage>
