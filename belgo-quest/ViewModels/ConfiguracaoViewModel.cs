@@ -1,14 +1,16 @@
 ﻿using System;
 using Xamarin.Forms;
 using Acr.UserDialogs;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace belgoquest
 {
     public class ConfiguracaoViewModel : BaseViewModel
     {
-        private string valor= string.Empty;
+        private string valor = string.Empty;
 
-        public ConfiguracaoViewModel ()
+        public ConfiguracaoViewModel()
         {
             valor = Settings.UriWebServices;
         }
@@ -16,26 +18,48 @@ namespace belgoquest
         public string Valor
         {
             get { return valor; }
-            set 
+            set
             {
                 valor = value;
                 OnPropertyChanged();
             }
         }
 
-        private Command updateCommand;
-        public Command UpdateCommand{
-            get 
-            { return updateCommand ?? (updateCommand = new Command(() =>
-                    {
-                        UserDialogs.Instance.ShowLoading("Atualizando configuração...");
-                        Settings.UriWebServices = Valor;
-                        UserDialogs.Instance.Alert("Configuração atualizada com sucesso!", "Configuração");
+        private ICommand updateCommand;
 
-                    })); 
+        public ICommand UpdateCommand
+        {
+            get
+            {
+                return updateCommand ?? (updateCommand = new Command(async () => await UpdateSettings())); 
             }
             
         }
+
+        protected   async Task UpdateSettings()
+        {
+            if (IsLoading)
+                return;
+
+            IsLoading = true;
+            try
+            {
+                UserDialogs.Instance.ShowLoading("Atualizando configuração...");
+                Settings.UriWebServices = Valor.ToString();
+                await Task.Delay(2000);
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.ShowSuccess("Configuração atualizada com sucesso!");
+            }catch(Exception ex)
+            {
+                UserDialogs.Instance.ShowError(ex.Message);
+            }finally
+            {
+                IsLoading = false;
+            }
+
+        }
+
+
     }
 }
 

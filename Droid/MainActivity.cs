@@ -21,6 +21,7 @@ namespace belgoquest.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             UserDialogs.Init(this);
+//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
             var sqliteFilename = "BelgoSQLite.sqlite";
             string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal); // Documents folder

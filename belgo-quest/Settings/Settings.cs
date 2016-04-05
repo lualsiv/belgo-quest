@@ -4,20 +4,14 @@ using Plugin.Settings;
 
 namespace belgoquest
 {
-    public class Settings : BaseViewModel
+    public static class Settings
     {
-        static ISettings AppSettings
+        public static ISettings AppSettings
         {
             get
             {
                 return CrossSettings.Current;
             }
-        }
-
-        static Settings settings;
-        public static Settings Current
-        {
-            get { return settings ?? (settings = new Settings()); }
         }
 
         #region Setting Constants
@@ -27,16 +21,16 @@ namespace belgoquest
 
         #endregion
 
-        public string UriWebServices
+        public static string UriWebServices
         {
             get
             { 
-                return AppSettings.GetValueOrDefault<string>(URIWEBSERVICES, UriWebServicesDefault); 
+                return PCLWebUtility.WebUtility.UrlDecode(AppSettings.GetValueOrDefault<string>(URIWEBSERVICES, UriWebServicesDefault)); 
             }
             set
             { 
-                if (AppSettings.AddOrUpdateValue<string>(URIWEBSERVICES, value))
-                    OnPropertyChanged();
+                AppSettings.AddOrUpdateValue<string>(URIWEBSERVICES, PCLWebUtility.WebUtility.UrlEncode(value));
+                    
 
             }
         }
