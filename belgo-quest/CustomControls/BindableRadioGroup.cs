@@ -227,13 +227,12 @@ namespace belgoquest.CustomControls
 
             var radIndex = 0;
 
-            foreach (var item in radButtons.ItemsSource)
+            foreach (var itemRadio in radButtons.ItemsSource)
             {
-                var propType = BindableObjectExtensions.GetPropType(item, radButtons.FontName);
 
                 var button = new CustomRadioButton
                     {
-                        Text =  BindableObjectExtensions.GetPropValue<string>(propType, radButtons.Text),
+                        Text =  BindableObjectExtensions.GetPropValue<string>(itemRadio, radButtons.Text),
                         Id = radIndex++,
                         TextColor = radButtons.TextColor,
                         FontSize = Device.GetNamedSize(NamedSize.Small, radButtons),

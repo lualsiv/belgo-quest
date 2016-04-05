@@ -1,11 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using belgoquest.Helpers;
 
 namespace belgoquest
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+
+        public Settings Settings
+        {
+            get { return Settings.Current; }
+        }
+
+
         private bool _isLoading = false;
 
         public bool IsLoading

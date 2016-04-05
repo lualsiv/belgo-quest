@@ -3,14 +3,35 @@
     <String>iOS/belgo-quest.iOS.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="belgo-quest/Views/Default.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="belgo-quest/Views/Pesquisas.xaml">
     <Files>
       <File FileName="belgo-quest/MainPage.xaml" Line="1" Column="1" />
-      <File FileName="belgo-quest/Views/Pesquisas.xaml" Line="1" Column="1" />
+      <File FileName="belgo-quest/Views/Pesquisas.xaml" Line="20" Column="100" />
       <File FileName="belgo-quest/ViewModels/PesquisaViewModel.cs" Line="1" Column="1" />
       <File FileName="Droid/Renderer/RadioButtonRenderer.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/Views/Default.cs" Line="1" Column="1" />
+      <File FileName="belgo-quest/Views/Default.cs" Line="12" Column="15" />
+      <File FileName="belgo-quest/ViewModels/PesquisaListViewModel.cs" Line="18" Column="39" />
+      <File FileName="belgo-quest/CustomControls/BindableRadioGroup.cs" Line="223" Column="68" />
+      <File FileName="belgo-quest/Views/Configuracao.xaml" Line="1" Column="1" />
+      <File FileName="belgo-quest/Factory/ViewFactory.cs" Line="41" Column="43" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="belgo-quest" expanded="True">
+            <Node name="belgo-quest" expanded="True">
+              <Node name="CustomControls" expanded="True" />
+              <Node name="Extensions" expanded="True" />
+              <Node name="Factory" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Pesquisas.xaml" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
