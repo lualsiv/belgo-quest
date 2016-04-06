@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="belgoquest.Pesquisa">
+	<ContentPage.Content>
+		<StackLayout>
+			<ListView ItemsSource="{Binding Perguntas}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Label Text="{Binding Descricao}" TextColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

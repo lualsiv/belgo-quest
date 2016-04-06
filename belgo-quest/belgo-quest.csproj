@@ -40,9 +40,6 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ViewModelNavigation.cs" />
     <Compile Include="Factory\ViewFactory.cs" />
-    <Compile Include="Views\Pesquisas.xaml.cs">
-      <DependentUpon>Pesquisas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SincronizarPesquisa.xaml.cs">
       <DependentUpon>SincronizarPesquisa.xaml</DependentUpon>
     </Compile>
@@ -72,6 +69,14 @@
     <Compile Include="Controls\CheckBox.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Behaviors\UrlValidatorBehavior.cs" />
+    <Compile Include="Views\PesquisasList.xaml.cs">
+      <DependentUpon>PesquisasList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RespostaModel.cs" />
+    <Compile Include="ViewModels\PerguntaViewModel.cs" />
+    <Compile Include="Views\Pesquisa.cs" />
+    <Compile Include="ViewModels\RespostaViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -83,9 +88,6 @@
     <EmbeddedResource Include="MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Pesquisas.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SincronizarPesquisa.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -93,6 +95,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Configuracao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PesquisasList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -107,6 +112,7 @@
     <Folder Include="Extensions\" />
     <Folder Include="Controls\" />
     <Folder Include="Settings\" />
+    <Folder Include="Behaviors\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

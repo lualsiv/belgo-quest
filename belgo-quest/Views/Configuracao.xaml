@@ -1,11 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="belgoquest.Configuracao">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="belgoquest.Configuracao"
+			 xmlns:local="clr-namespace:belgoquest;assembly=belgo-quest">
 	<ContentPage.Content>
 	<StackLayout>
 			<Label Text="Configurar Sincronização"/>
 			<Label Text="Endereço dos serviços:"/>
-			<Entry Text="{Binding Valor}"/>
-			<Button Text="Salvar" VerticalOptions="End" Command="{Binding UpdateCommand}"/>
+			<Entry Text="{Binding Valor}">
+				<Entry.Behaviors>
+					<local:UrlValidatorBehavior x:Name="urlValidator"/>
+				</Entry.Behaviors>
+			</Entry>
+			<Button Text="Salvar" 
+					VerticalOptions="End" 
+					Command="{Binding UpdateCommand}" 
+					IsEnabled="{Binding Source={x:Reference urlValidator}, Path=IsValid}"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

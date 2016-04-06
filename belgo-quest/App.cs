@@ -18,7 +18,8 @@ namespace belgoquest
             // is not intended to be a demo of those tools.
 
             ViewFactory.Register<MasterPage, MasterPageViewModel> ();
-            ViewFactory.Register<Pesquisas, PesquisaListViewModel> ();
+            ViewFactory.Register<PesquisasList, PesquisaListViewModel> ();
+            ViewFactory.Register<Pesquisa, PesquisaViewModel>();
             ViewFactory.Register<SincronizarPesquisa, SincronizarPesquisaViewModel> ();
             ViewFactory.Register<SincronizarResposta, SincronizarRespostaViewModel> ();
             ViewFactory.Register<Configuracao, ConfiguracaoViewModel> ();
