@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Reflection;
+using belgoquest.Controls;
 
 namespace belgoquest.CustomControls
 {
@@ -213,6 +214,8 @@ namespace belgoquest.CustomControls
                 button.Checked = true;
             }
         }
+
+
 
         private static void OnItemsSourceChanged(BindableObject bindable, IEnumerable oldValue, IEnumerable newValue)
         {

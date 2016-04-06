@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace belgoquest
+namespace belgoquest.Controls
 {
     /// <summary>
     /// The check box.

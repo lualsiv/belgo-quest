@@ -2,10 +2,36 @@
 
 namespace belgoquest
 {
-    public class RespostaViewModel
+    public class RespostaViewModel : BaseViewModel
     {
-        public RespostaViewModel()
+
+
+
+
+        RespostaModel item;
+
+        public string Descricao
         {
+            get{ return item.DSC_RESPOSTA; }
+        }
+
+        private bool isChecked = false;
+
+        public bool IsChecked
+        {
+            get{ return isChecked;}
+            set
+            { 
+                if (isChecked == value)
+                    return;
+                isChecked = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public RespostaViewModel(RespostaModel item)
+        {
+            this.item = item;
         }
     }
 }

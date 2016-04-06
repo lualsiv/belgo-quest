@@ -14,7 +14,7 @@ namespace belgoquest
 
         public void Push (Page page)
         {
-            Application.Current.MainPage.Navigation.PushAsync (page);
+            ((MainPage)Application.Current.MainPage).Detail.Navigation.PushAsync (page);
         }
 
         public void Push<TViewModel> ()
@@ -25,17 +25,17 @@ namespace belgoquest
 
         public void Pop ()
         {
-            Application.Current.MainPage.Navigation.PopAsync ();
+            ((MainPage)Application.Current.MainPage).Detail.Navigation.PopAsync ();
         }
 
         public void PopToRoot ()
         {
-            Application.Current.MainPage.Navigation.PopToRootAsync ();
+            ((MainPage)Application.Current.MainPage).Detail.Navigation.PopToRootAsync ();
         }
 
         public void PushModal (Page page)
         {
-            Application.Current.MainPage.Navigation.PushModalAsync (page);
+            ((MainPage)Application.Current.MainPage).Detail.Navigation.PushModalAsync (page);
         }
 
         public void PushModal<TViewModel> ()
@@ -49,7 +49,7 @@ namespace belgoquest
             var modalParent = implementor;
             while (modalParent.Parent as Page != null)
                 modalParent = (Page) modalParent.Parent;
-            Application.Current.MainPage.Navigation.PopModalAsync ();
+            ((MainPage)Application.Current.MainPage).Detail.Navigation.PopModalAsync ();
         }
     }
 }

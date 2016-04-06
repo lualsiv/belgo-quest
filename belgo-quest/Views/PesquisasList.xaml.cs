@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace belgoquest
 {
-    public partial class Pesquisas : ContentPage
+    public partial class PesquisasList : ContentPage
     {
-        public Pesquisas()
+        public PesquisasList()
         {
             InitializeComponent();
         }

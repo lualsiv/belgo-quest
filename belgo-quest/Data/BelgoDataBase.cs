@@ -36,7 +36,21 @@ namespace belgoquest
             }
         }
 
-        public PesquisaModel GetItem (int id) 
+        public IEnumerable<PerguntaModel> GetPerguntas(int codPesquisa)
+        {
+            lock (locker) {
+                return (from i in database.Table<PerguntaModel>() where i.COD_PESQUISA == codPesquisa  orderby i.NUM_ORDEM_PEGUNTA select i).ToList();
+            }
+        }
+
+        public IEnumerable<RespostaModel> GetRespostas(int codPergunta)
+        {
+            lock (locker) {
+                return (from i in database.Table<RespostaModel>() where i.COD_PERGUNTA == codPergunta select i).ToList();
+            }
+        }
+
+        public PesquisaModel GetPesquisa (int id) 
         {
             lock (locker) {
                 return database.Table<PesquisaModel>().FirstOrDefault(x => x.COD_PESQUISA == id);

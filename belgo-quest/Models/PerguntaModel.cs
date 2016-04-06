@@ -39,7 +39,6 @@ namespace belgoquest
             set;
         }
 
-
     }
 }
 

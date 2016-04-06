@@ -8,8 +8,10 @@ namespace belgoquest
 {
     public class PesquisaListViewModel : BaseViewModel
     {
+        ICommand continueCommand;
+
         ObservableCollection<PesquisaViewModel> contents;
-// = new ObservableCollection<PesquisaViewModel> ();
+
         public ObservableCollection<PesquisaViewModel> Contents
         { 
             get { return contents; } 
@@ -39,11 +41,28 @@ namespace belgoquest
             var all = App.Database.GetPesquisas();
             contents = new ObservableCollection<PesquisaViewModel>((from pesq in all
                                                                                  select new PesquisaViewModel(pesq)));
+
+            continueCommand = new Command(Continue);
         }
 
 //        PesquisaModel item;
 //
-//        ICommand saveCommand, deleteCommand, cancelCommand, speakCommand;
+        public ICommand ContinueCommand
+        {
+            get { return continueCommand; }
+            set
+            {
+                if (continueCommand == value)
+                    return;
+                continueCommand = value;
+                OnPropertyChanged ();
+            }
+        }
+
+        public void Continue()
+        {
+            this.Navigation.Push(ViewFactory.CreatePage(contents[selectedIndex]));
+        }
 
     }
 }
