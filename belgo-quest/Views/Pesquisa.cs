@@ -37,14 +37,20 @@ namespace belgoquest
                 switch (pesquisa.Perguntas[i].TipoPergunta)
                 {
                     case 1:
-                        for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
-                        {
-                            CustomRadioButton radio = new CustomRadioButton();
-                            radio.BindingContext = pesquisa.Perguntas[i].Respostas[j];
-                            radio.SetBinding(CustomRadioButton.TextProperty, new Binding("Descricao", BindingMode.Default));
-                            radio.SetBinding(CustomRadioButton.CheckedProperty, new Binding("IsChecked", BindingMode.TwoWay));
-                            aux.Children.Add(radio);
-                        }
+//                        for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
+//                        {
+//                            CustomRadioButton radio = new CustomRadioButton();
+//                            radio.BindingContext = pesquisa.Perguntas[i].Respostas[j];
+//                            radio.SetBinding(CustomRadioButton.TextProperty, new Binding("Descricao", BindingMode.Default));
+//                            radio.SetBinding(CustomRadioButton.CheckedProperty, new Binding("IsChecked", BindingMode.TwoWay));
+//                            aux.Children.Add(radio);
+//                        }
+
+                        BindableRadioGroup radio = new BindableRadioGroup(){ Text = "Descricao", ItemsSource = pesquisa.Perguntas[i].Respostas };
+                        radio.BindingContext = pesquisa.Perguntas[i];
+                        radio.SetBinding(BindableRadioGroup.SelectedIndexProperty, new Binding("SelectedIndex", BindingMode.TwoWay));
+                        aux.Children.Add(radio);
+
                         break;
                     case 2:
                         for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
@@ -66,6 +72,19 @@ namespace belgoquest
                 }
                 layout.Children.Add(aux);
             }
+
+
+
+            Button finalizar = new Button()
+            { 
+                    Text = "Finalizar",
+                    VerticalOptions = LayoutOptions.End,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+
+            finalizar.SetBinding(Button.CommandProperty, new Binding("FinalizarCommand", BindingMode.Default));
+
+            layout.Children.Add(finalizar);
 
             Content = layout;
 

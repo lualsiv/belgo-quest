@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
+using Xamarin.Forms;
+using Acr.UserDialogs;
+using System.Threading.Tasks;
 
 namespace belgoquest
 {
     public class PesquisaViewModel : BaseViewModel
     {
+        ICommand finalizarCommand;
 
         ObservableCollection<PerguntaViewModel> perguntas;
 
@@ -59,6 +64,35 @@ namespace belgoquest
             {
                 item.NOM_PESQUISA = value;
                 OnPropertyChanged();
+            }
+        }
+
+        public ICommand FinalizarCommand
+        {
+            get { return finalizarCommand ?? (finalizarCommand = new Command(async () => await Finalizar())); }
+
+        }
+
+        public async Task Finalizar()
+        {
+
+            if (IsLoading)
+                return;
+
+            IsLoading = true;
+
+            try
+            {
+                UserDialogs.Instance.ShowLoading("Finalizando Questionário...");
+                await Task.Delay(2000);
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.ShowSuccess("Questionário Finalizado com sucesso!");
+                this.Navigation.New<PesquisaListViewModel>();
+
+            }
+            finally
+            {
+                IsLoading = false;
             }
         }
     }

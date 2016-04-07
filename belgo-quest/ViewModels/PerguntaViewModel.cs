@@ -59,6 +59,20 @@ namespace belgoquest
             }
         }
 
+        private int selectedIndex;
+        public int SelectedIndex
+        {
+            get { return selectedIndex; }
+            set
+            {
+                if (value == selectedIndex) return;
+                selectedIndex = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
         public PerguntaViewModel(PerguntaModel item)
         {
             this.item = item;

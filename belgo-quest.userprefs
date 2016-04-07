@@ -2,61 +2,30 @@
   <DisabledProjects>
     <String>iOS/belgo-quest.iOS.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="belgo-quest/Models/RespostaModel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="belgo-quest/MainPage.xaml" Line="11" Column="18" />
-      <File FileName="belgo-quest/Views/PesquisasList.xaml" Line="19" Column="15" />
-      <File FileName="belgo-quest/ViewModels/PesquisaViewModel.cs" Line="11" Column="50" />
-      <File FileName="Droid/Renderer/RadioButtonRenderer.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/Views/Default.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/ViewModels/PesquisaListViewModel.cs" Line="16" Column="11" />
-      <File FileName="belgo-quest/CustomControls/BindableRadioGroup.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/Views/Configuracao.xaml" Line="8" Column="44" />
-      <File FileName="belgo-quest/Factory/ViewFactory.cs" Line="54" Column="10" />
-      <File FileName="belgo-quest/packages.config" Line="1" Column="1" />
-      <File FileName="belgo-quest/ViewModels/ConfiguracaoViewModel.cs" Line="53" Column="14" />
-      <File FileName="belgo-quest/ViewModels/BaseViewModel.cs" Line="11" Column="41" />
-      <File FileName="Droid/Helpers/Settings.cs" Line="15" Column="39" />
-      <File FileName="belgo-quest/Settings/Settings.cs" Line="32" Column="113" />
-      <File FileName="belgo-quest/ViewModels/SincronizarPesquisaViewModel.cs" Line="57" Column="10" />
-      <File FileName="belgo-quest/Behaviors/UrlValidatorBehavior.cs" Line="12" Column="56" />
-      <File FileName="belgo-quest/Views/PesquisasList.xaml.cs" Line="8" Column="39" />
-      <File FileName="belgo-quest/App.cs" Line="46" Column="48" />
-      <File FileName="belgo-quest/Views/Pesquisa.xaml" Line="3" Column="23" />
-      <File FileName="belgo-quest/Views/Pesquisa.xaml.cs" Line="12" Column="35" />
-      <File FileName="belgo-quest/ViewModels/ViewModelNavigation.cs" Line="50" Column="55" />
-      <File FileName="belgo-quest/Data/BelgoDataBase.cs" Line="42" Column="90" />
-      <File FileName="belgo-quest/Models/PerguntaModel.cs" Line="24" Column="35" />
-      <File FileName="belgo-quest/Models/RespostaModel.cs" Line="20" Column="35" />
-      <File FileName="belgo-quest/Models/PesquisaModel.cs" Line="9" Column="20" />
+      <File FileName="belgo-quest/Views/Pesquisa.cs" Line="51" Column="110" />
+      <File FileName="belgo-quest/CustomControls/BindableRadioGroup.cs" Line="98" Column="33" />
+      <File FileName="belgo-quest/ViewModels/PerguntaViewModel.cs" Line="57" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="belgo-quest" expanded="True">
-            <Node name="belgo-quest" expanded="True">
-              <Node name="Behaviors" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Factory" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="RespostaModel.cs" selected="True" />
-              </Node>
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Pesquisa.xaml" expanded="True" />
-                <Node name="PesquisasList.xaml" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="belgo-quest.Droid" expanded="True" />
+            <Node name="belgo-quest.Droid" selected="True" />
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/MasterPageViewModel.cs" line="65" column="1" />
+      <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/RespostaViewModel.cs" line="38" column="52" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -51,6 +51,12 @@ namespace belgoquest
                 modalParent = (Page) modalParent.Parent;
             ((MainPage)Application.Current.MainPage).Detail.Navigation.PopModalAsync ();
         }
+
+        public void New<TViewModel> ()
+            where TViewModel : BaseViewModel
+        {
+            ((MainPage)Application.Current.MainPage).Detail = new NavigationPage(ViewFactory.CreatePage<TViewModel> ());
+        }
     }
 }
 
