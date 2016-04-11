@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using Definition.Dto;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class PerguntaViewModel : BaseViewModel
     {
@@ -33,16 +34,21 @@ namespace belgoquest
             }
         }
 
-        PerguntaModel item;
+        CAD_PERGUNTA item;
 
         public string Descricao
         {
             get { return item.DSC_PERGUNTA;}
         }
 
-        public int TipoPergunta
+        public int Codigo
         {
-            get{ return item.IND_TPO_PERGUNTA; }
+            get { return item.COD_PERGUNTA; }
+
+        }
+        public string TipoPergunta
+        {
+            get{ return item.IND_TPO_PERGUNTA.ToUpper(); }
 
         }
 
@@ -71,9 +77,21 @@ namespace belgoquest
             }
         }
 
+        private RespostaViewModel selectedItem;
+        public RespostaViewModel SelectedItem
+        {
+            get{ return selectedItem;}
+            set
+            { 
+                if (selectedItem == value)
+                    return;
+                selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
 
 
-        public PerguntaViewModel(PerguntaModel item)
+        public PerguntaViewModel(CAD_PERGUNTA item)
         {
             this.item = item;
         }

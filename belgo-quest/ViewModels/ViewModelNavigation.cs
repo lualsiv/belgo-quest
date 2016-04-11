@@ -1,6 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-
+using belgoquest.ViewModel;
 namespace belgoquest
 {
     public class ViewModelNavigation

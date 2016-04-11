@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Microsoft.Practices.ServiceLocation;
+using belgoquest.ViewModel;
 
 namespace belgoquest
 {
@@ -45,7 +47,15 @@ namespace belgoquest
             }
 
             var page = (Page)Activator.CreateInstance (viewType);
-            var viewModel = (BaseViewModel)Activator.CreateInstance (viewModelType);
+            BaseViewModel viewModel;
+
+            try
+            {
+                viewModel = (BaseViewModel)ServiceLocator.Current.GetInstance<object>(viewModelType.ToString());
+            }catch
+            {
+                viewModel = (BaseViewModel)Activator.CreateInstance (viewModelType);
+            }
 
             viewModel.Navigation = new ViewModelNavigation (page);
             page.BindingContext = viewModel;

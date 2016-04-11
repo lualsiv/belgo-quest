@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using belgoquest.ViewModel;
 
 namespace belgoquest
 {

@@ -2,30 +2,42 @@
   <DisabledProjects>
     <String>iOS/belgo-quest.iOS.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="belgo-quest/Factory/ViewFactory.cs">
     <Files>
-      <File FileName="belgo-quest/Views/Pesquisa.cs" Line="51" Column="110" />
-      <File FileName="belgo-quest/CustomControls/BindableRadioGroup.cs" Line="98" Column="33" />
-      <File FileName="belgo-quest/ViewModels/PerguntaViewModel.cs" Line="57" Column="31" />
+      <File FileName="belgo-quest/App.cs" Line="112" Column="10" />
+      <File FileName="ApiRepository/Pesquisa/PesquisaRepository.cs" Line="17" Column="41" />
+      <File FileName="DataService/PesquisaService.cs" Line="22" Column="26" />
+      <File FileName="ApiRepository/Base/BaseRepository.cs" Line="19" Column="61" />
+      <File FileName="belgo-quest/ViewModels/SincronizarPesquisaViewModel.cs" Line="44" Column="27" />
+      <File FileName="belgo-quest/Factory/ViewFactory.cs" Line="56" Column="64" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="belgo-quest" expanded="True">
-            <Node name="belgo-quest.Droid" selected="True" />
+            <Node name="ApiRepository" expanded="True">
+              <Node name="Base" expanded="True" />
+              <Node name="Pesquisa" expanded="True" />
+            </Node>
+            <Node name="belgo-quest" expanded="True">
+              <Node name="Factory" expanded="True">
+                <Node name="ViewFactory.cs" selected="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
+            </Node>
+            <Node name="DataService" expanded="True" />
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/MasterPageViewModel.cs" line="65" column="1" />
-      <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/RespostaViewModel.cs" line="38" column="52" />
+      <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/RespostaViewModel.cs" line="44" column="52" />
+      <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/PesquisaViewModel.cs" line="100" column="33" />
+      <Breakpoint file="/Users/macbookpro/Projects/belgo-quest/belgo-quest/ViewModels/SincronizarPesquisaViewModel.cs" line="26" column="48" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

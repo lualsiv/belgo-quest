@@ -3,11 +3,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using belgoquest.Helpers;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
+//        protected AsyncLock _lock = new AsyncLock();
         private bool _isLoading = false;
 
         public bool IsLoading

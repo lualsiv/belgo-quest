@@ -17,7 +17,7 @@ namespace belgoquest
         #region Setting Constants
 
         const string URIWEBSERVICES = "UriWebServices";
-        static readonly string UriWebServicesDefault = "http://belgo-quest.com";
+        static readonly string UriWebServicesDefault = "http://api.ftcon.com.br/api/";
 
         #endregion
 

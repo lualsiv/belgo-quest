@@ -6,7 +6,7 @@ using PropertyChanged;
 using Xamarin.Forms;
 using Acr.UserDialogs;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class SincronizarRespostaViewModel : BaseViewModel
     {

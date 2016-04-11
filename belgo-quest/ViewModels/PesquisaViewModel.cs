@@ -5,8 +5,9 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Threading.Tasks;
+using Definition.Dto;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class PesquisaViewModel : BaseViewModel
     {
@@ -40,9 +41,9 @@ namespace belgoquest
         }
 
 
-        PesquisaModel item;
+        CAD_PESQUISA item;
 
-        public PesquisaViewModel(PesquisaModel pesquisaItem)
+        public PesquisaViewModel(CAD_PESQUISA pesquisaItem)
         {
             item = pesquisaItem;
         }
@@ -84,7 +85,55 @@ namespace belgoquest
             try
             {
                 UserDialogs.Instance.ShowLoading("Finalizando Questionário...");
-                await Task.Delay(2000);
+//                await Task.Delay(2000);
+                CAD_PARTICIPACAO participacao;
+                for (int i = 0; i < perguntas.Count; i++)
+                {
+                    
+                    
+                    switch (perguntas[i].TipoPergunta)
+                    {
+                        case "U":
+
+                            participacao = new CAD_PARTICIPACAO()
+                            {
+                                COD_PERGUNTA = perguntas[i].Codigo,
+                                COD_RESPOSTA = perguntas[i].SelectedItem.Codigo,
+                                DTA_PARTICIPACAO = DateTime.Now
+                            };
+                            
+                            App.Database.SaveParticipacao(participacao);
+
+                            break;
+
+                        case "M":
+
+                            var respSelecionadas = perguntas[i].Respostas.Where(resp => resp.IsChecked).ToList();
+                            for (int j = 0; j < respSelecionadas.Count; j++)
+                            {
+                                participacao = new CAD_PARTICIPACAO()
+                                {
+                                    COD_PERGUNTA = perguntas[i].Codigo,
+                                    COD_RESPOSTA = respSelecionadas[j].Codigo,
+                                    DTA_PARTICIPACAO = DateTime.Now
+                                };
+                                App.Database.SaveParticipacao(participacao);
+                            }
+                            break;
+                        case "D":
+                            participacao = new CAD_PARTICIPACAO()
+                                {
+                                    COD_PERGUNTA = perguntas[i].Codigo,
+                                    DSC_RESP_DISSERTATIVA = perguntas[i].Texto,
+                                    DTA_PARTICIPACAO = DateTime.Now
+                                };
+                            App.Database.SaveParticipacao(participacao);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
                 UserDialogs.Instance.HideLoading();
                 UserDialogs.Instance.ShowSuccess("Questionário Finalizado com sucesso!");
                 this.Navigation.New<PesquisaListViewModel>();

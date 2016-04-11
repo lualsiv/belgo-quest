@@ -1,6 +1,7 @@
 ﻿using System;
+using Definition.Dto;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class RespostaViewModel : BaseViewModel
     {
@@ -8,11 +9,17 @@ namespace belgoquest
 
 
 
-        RespostaModel item;
+        CAD_RESPOSTA item;
 
         public string Descricao
         {
             get{ return item.DSC_RESPOSTA; }
+        }
+
+        public int Codigo
+        {
+            get { return item.COD_RESPOSTA; }
+
         }
 
         private bool isChecked = false;
@@ -42,7 +49,7 @@ namespace belgoquest
         }
 
 
-        public RespostaViewModel(RespostaModel item)
+        public RespostaViewModel(CAD_RESPOSTA item)
         {
             this.item = item;
         }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using belgoquest.CustomControls;
 using belgoquest.Controls;
+using belgoquest.ViewModel;
 
 namespace belgoquest
 {
@@ -36,7 +37,7 @@ namespace belgoquest
 
                 switch (pesquisa.Perguntas[i].TipoPergunta)
                 {
-                    case 1:
+                    case "U":
 //                        for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
 //                        {
 //                            CustomRadioButton radio = new CustomRadioButton();
@@ -49,10 +50,11 @@ namespace belgoquest
                         BindableRadioGroup radio = new BindableRadioGroup(){ Text = "Descricao", ItemsSource = pesquisa.Perguntas[i].Respostas };
                         radio.BindingContext = pesquisa.Perguntas[i];
                         radio.SetBinding(BindableRadioGroup.SelectedIndexProperty, new Binding("SelectedIndex", BindingMode.TwoWay));
+                        radio.SetBinding(BindableRadioGroup.SelectedItemProperty, new Binding("SelectedItem", BindingMode.TwoWay));
                         aux.Children.Add(radio);
 
                         break;
-                    case 2:
+                    case "M":
                         for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
                         {
                             CheckBox check = new CheckBox();

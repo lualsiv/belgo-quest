@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Linq;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class MasterPageViewModel : BaseViewModel
     {

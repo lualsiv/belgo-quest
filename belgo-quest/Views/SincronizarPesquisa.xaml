@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 	<StackLayout>
 			<Label Text="Sincronizar Pesquisas" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-			<Button Command="{Binding LoadPesquisasCommand}" Text="Atualizar"/>
+			<Button Command="{Binding SincronizarCommand}" Text="Atualizar"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

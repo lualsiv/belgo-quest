@@ -4,7 +4,7 @@ using Acr.UserDialogs;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace belgoquest
+namespace belgoquest.ViewModel
 {
     public class ConfiguracaoViewModel : BaseViewModel
     {

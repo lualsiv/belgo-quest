@@ -43,6 +43,13 @@ namespace belgoquest.CustomControls
             BindableProperty.Create<BindableRadioGroup, int>(o => o.SelectedIndex, default(int), BindingMode.TwoWay,
                 propertyChanged: OnSelectedIndexChanged);
 
+        /// <summary>
+        /// The selected index property
+        /// </summary>
+        public static BindableProperty SelectedItemProperty =
+            BindableProperty.Create<BindableRadioGroup, object>(o => o.SelectedItem, default(object), BindingMode.TwoWay);
+                //propertyChanged: OnSelectedIndexChanged);
+        
 
         /// <summary>
         /// The text color property
@@ -99,6 +106,12 @@ namespace belgoquest.CustomControls
         {
             get { return (int)GetValue(SelectedIndexProperty); }
             set { SetValue(SelectedIndexProperty, value); }
+        }
+
+        public object SelectedItem
+        {
+            get { return (Object)GetValue(SelectedItemProperty); }
+            set { SetValue(SelectedItemProperty, value); }
         }
 
         /// <summary>
@@ -187,6 +200,7 @@ namespace belgoquest.CustomControls
                 else
                 {
                     SelectedIndex = selectedItem.Id;
+                    SelectedItem = selectedItem.BindingContext;
                     if (CheckedChanged != null)
                     {
                         CheckedChanged.Invoke(sender, item.Id);
@@ -235,6 +249,7 @@ namespace belgoquest.CustomControls
 
                 var button = new CustomRadioButton
                     {
+                        BindingContext = itemRadio,
                         Text =  BindableObjectExtensions.GetPropValue<string>(itemRadio, radButtons.Text),
                         Id = radIndex++,
                         TextColor = radButtons.TextColor,

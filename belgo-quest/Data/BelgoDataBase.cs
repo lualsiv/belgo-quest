@@ -2,6 +2,7 @@
 using SQLite.Net;
 using System.Collections.Generic;
 using System.Linq;
+using Definition.Dto;
 
 namespace belgoquest
 {
@@ -23,58 +24,75 @@ namespace belgoquest
         public BelgoDatabase(SQLiteConnection conn)
         {
             database = conn;
+
             // create the tables
-            database.CreateTable<PesquisaModel>();
-            database.CreateTable<PerguntaModel>();
-//            database.CreateTable<>();
+            database.CreateTable<CAD_PESQUISA>();
+            database.CreateTable<CAD_PERGUNTA>();
+            database.CreateTable<CAD_RESPOSTA>();
+            database.CreateTable<CAD_PARTICIPACAO>();
         }
 
-        public IEnumerable<PesquisaModel> GetPesquisas()
+        public  int SaveListPesquisa(IEnumerable<CAD_PESQUISA> listaPesq)
+        {
+            int retorno = database.InsertAll(listaPesq, true);
+
+            return retorno;
+        }
+
+        public  int SaveListPergunta(IEnumerable<CAD_PERGUNTA> listaPerg)
+        {
+            int retorno = database.InsertAll(listaPerg, true);
+            return retorno;
+        }
+
+        public  int SaveListResposta(IEnumerable<CAD_RESPOSTA> listaResp)
+        {
+            int retorno = database.InsertAll(listaResp, true);
+            return retorno;
+        }
+
+        public IEnumerable<CAD_PESQUISA> GetPesquisas()
         {
             lock (locker) {
-                return (from i in database.Table<PesquisaModel>() select i).ToList();
+                return (from i in database.Table<CAD_PESQUISA>() select i).ToList();
             }
         }
 
-        public IEnumerable<PerguntaModel> GetPerguntas(int codPesquisa)
+        public IEnumerable<CAD_PERGUNTA> GetPerguntas(int codPesquisa)
         {
             lock (locker) {
-                return (from i in database.Table<PerguntaModel>() where i.COD_PESQUISA == codPesquisa  orderby i.NUM_ORDEM_PEGUNTA select i).ToList();
+                return (from i in database.Table<CAD_PERGUNTA>() where i.COD_PESQUISA == codPesquisa  orderby i.NUM_ORDEM_PEGUNTA select i).ToList();
             }
         }
 
-        public IEnumerable<RespostaModel> GetRespostas(int codPergunta)
+        public IEnumerable<CAD_RESPOSTA> GetRespostas(int codPergunta)
         {
             lock (locker) {
-                return (from i in database.Table<RespostaModel>() where i.COD_PERGUNTA == codPergunta select i).ToList();
+                return (from i in database.Table<CAD_RESPOSTA>() where i.COD_PERGUNTA == codPergunta select i).ToList();
             }
         }
 
-        public PesquisaModel GetPesquisa (int id) 
+        public CAD_PESQUISA GetPesquisa (int id) 
         {
             lock (locker) {
-                return database.Table<PesquisaModel>().FirstOrDefault(x => x.COD_PESQUISA == id);
+                return database.Table<CAD_PESQUISA>().FirstOrDefault(x => x.COD_PESQUISA == id);
             }
         }
 
-//        public int SaveItem (TodoItem item) 
-//        {
-//            lock (locker) {
-//                if (item.ID != 0) {
-//                    database.Update(item);
-//                    return item.ID;
-//                } else {
-//                    return database.Insert(item);
-//                }
-//            }
-//        }
-//
-//        public int DeleteItem(int id)
-//        {
-//            lock (locker) {
-//                return database.Delete<TodoItem>(id);
-//            }
-//        }
+        public int SaveParticipacao (CAD_PARTICIPACAO item) 
+        {
+            lock (locker) {
+                
+                return database.Insert(item);
+            }
+        }
+
+        public int DeleteParticipacao(int id)
+        {
+            lock (locker) {
+                return database.Delete<CAD_PARTICIPACAO>(id);
+            }
+        }
     }
 }
 
