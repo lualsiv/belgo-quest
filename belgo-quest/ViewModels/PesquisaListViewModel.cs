@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using belgoquest.ViewModel;
+using Acr.UserDialogs;
 
 namespace belgoquest
 {
@@ -25,13 +26,15 @@ namespace belgoquest
             }
         }
 
-        private int selectedIndex;
+        private int selectedIndex = -1;
+
         public int SelectedIndex
         {
             get { return selectedIndex; }
             set
             {
-                if (value == selectedIndex) return;
+                if (value == selectedIndex)
+                    return;
                 selectedIndex = value;
                 OnPropertyChanged();
             }
@@ -41,13 +44,13 @@ namespace belgoquest
         {
             var all = App.Database.GetPesquisas();
             contents = new ObservableCollection<PesquisaViewModel>((from pesq in all
-                                                                                 select new PesquisaViewModel(pesq)));
+                                                                                select new PesquisaViewModel(pesq)));
 
             continueCommand = new Command(Continue);
         }
 
-//        PesquisaModel item;
-//
+        //        PesquisaModel item;
+        //
         public ICommand ContinueCommand
         {
             get { return continueCommand; }
@@ -56,12 +59,19 @@ namespace belgoquest
                 if (continueCommand == value)
                     return;
                 continueCommand = value;
-                OnPropertyChanged ();
+                OnPropertyChanged();
             }
         }
 
         public void Continue()
         {
+            if (selectedIndex < 0)
+            {
+                UserDialogs.Instance.ShowError("Selecione uma pesquisa");
+                return;
+            }
+
+                
             this.Navigation.Push(ViewFactory.CreatePage(contents[selectedIndex]));
         }
 

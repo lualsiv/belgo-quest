@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Definition", "Definition\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService.csproj", "{40ECB351-016A-4039-843B-274F70905A4A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileSolution", "FileSolution", "{2B2FBDC8-7E24-45B1-9B38-4C792F41CD1A}"
+	ProjectSection(SolutionItems) = preProject
+		Droid\com.jidd.belgo_quest.apk = Droid\com.jidd.belgo_quest.apk
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,5 +100,7 @@ Global
 		{762A2977-F91E-4FC5-8D1F-B2ADD9894FD2}.Release|iPhone.Build.0 = Release|Any CPU
 		{762A2977-F91E-4FC5-8D1F-B2ADD9894FD2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{762A2977-F91E-4FC5-8D1F-B2ADD9894FD2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

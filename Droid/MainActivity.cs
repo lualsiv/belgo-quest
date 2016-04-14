@@ -61,7 +61,8 @@ namespace belgoquest.Droid
         private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
         {
             var newExc = new Exception("TaskSchedulerOnUnobservedTaskException", unobservedTaskExceptionEventArgs.Exception);
-            LogUnhandledException(newExc);
+            UserDialogs.Instance.ShowError(unobservedTaskExceptionEventArgs.Exception.Message);
+//            LogUnhandledException(newExc);
         }  
 
         private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
@@ -69,7 +70,7 @@ namespace belgoquest.Droid
             var newExc = new Exception("CurrentDomainOnUnhandledException", unhandledExceptionEventArgs.ExceptionObject as Exception);
             UserDialogs.Instance.ShowError((unhandledExceptionEventArgs.ExceptionObject as Exception).Message);
 
-            LogUnhandledException(newExc);
+//            LogUnhandledException(newExc);
         }  
 
         internal static void LogUnhandledException(Exception exception)

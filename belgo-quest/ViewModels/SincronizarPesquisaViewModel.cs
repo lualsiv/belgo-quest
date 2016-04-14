@@ -49,10 +49,10 @@ namespace belgoquest.ViewModel
 
                                         if(pesquisas.Success)
                                         {
-                                            //var listaExistente = App.Database.GetPesquisas();
-                                            var listaFiltrada = pesquisas.Value.Where(item=> (item.IND_FECHADO.HasValue)); //&& !listaExistente.Any(pesq=> pesq.COD_PESQUISA == item.COD_PESQUISA));
+                                            var listaExistente = App.Database.GetPesquisas();
+                                            var listaFiltrada = pesquisas.Value.Where(item=> (item.IND_FECHADO.HasValue) && !listaExistente.Any(pesq=> pesq.COD_PESQUISA == item.COD_PESQUISA));
 
-                                            App.Database.SaveListPesquisa(listaFiltrada);
+                                            int qtd = App.Database.SaveListPesquisa(listaFiltrada);
 
                                             foreach (var pesq in listaFiltrada) {
                                                 App.Database.SaveListPergunta(pesq.Perguntas);
@@ -61,16 +61,19 @@ namespace belgoquest.ViewModel
                                                     App.Database.SaveListResposta(perg.Respostas);
                                                 }
                                             }
-                                            UserDialogs.Instance.ShowSuccess("Sincronizacão realizada com sucesso!");
+                                            UserDialogs.Instance.HideLoading();
+                                            UserDialogs.Instance.ShowSuccess(String.Format("Sincronizacão realizada com sucesso!\n {0} nova(s) pesquisa(s).", qtd));
                                         }else
                                         {
+                                            UserDialogs.Instance.HideLoading();
                                             UserDialogs.Instance.ShowError(string.Format("{0}-{1}",pesquisas.Error, pesquisas.Message));
                                         }
-                                        UserDialogs.Instance.HideLoading();
+
                                     }
                                     catch(Exception ex)
                                     {
-                                        UserDialogs.Instance.ShowError(string.Format("Erro: {1}",ex.Message));
+                                        UserDialogs.Instance.HideLoading();
+                                        UserDialogs.Instance.ShowError(string.Format("Erro: {0}",ex.Message));
                                     }
                                     finally
                                     {
