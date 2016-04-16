@@ -85,8 +85,10 @@ namespace belgoquest.ViewModel
             try
             {
                 UserDialogs.Instance.ShowLoading("Finalizando Questionário...");
-//                await Task.Delay(2000);
+
                 CAD_PARTICIPACAO participacao;
+                DateTime dataParticipacao = DateTime.Now;
+
                 for (int i = 0; i < perguntas.Count; i++)
                 {
                     
@@ -95,11 +97,13 @@ namespace belgoquest.ViewModel
                     {
                         case "U":
 
+
                             participacao = new CAD_PARTICIPACAO()
                             {
                                 COD_PERGUNTA = perguntas[i].Codigo,
-                                COD_RESPOSTA = perguntas[i].SelectedItem.Codigo,
-                                DTA_PARTICIPACAO = DateTime.Now
+                                COD_RESPOSTA = perguntas[i].SelectedItem == null ? default(int?) : perguntas[i].SelectedItem.Codigo,
+                                DTA_PARTICIPACAO = dataParticipacao,
+                                IND_RESPOSTA_NULA = perguntas[i].SelectedItem == null ? "S" : "N"
                             };
                             
                             App.Database.SaveParticipacao(participacao);
@@ -115,18 +119,21 @@ namespace belgoquest.ViewModel
                                 {
                                     COD_PERGUNTA = perguntas[i].Codigo,
                                     COD_RESPOSTA = respSelecionadas[j].Codigo,
-                                    DTA_PARTICIPACAO = DateTime.Now
+                                    DTA_PARTICIPACAO = dataParticipacao,
+                                    IND_RESPOSTA_NULA = "N"
                                 };
                                 App.Database.SaveParticipacao(participacao);
                             }
                             break;
                         case "D":
                             participacao = new CAD_PARTICIPACAO()
-                                {
-                                    COD_PERGUNTA = perguntas[i].Codigo,
-                                    DSC_RESP_DISSERTATIVA = perguntas[i].Texto,
-                                    DTA_PARTICIPACAO = DateTime.Now
-                                };
+                            {
+                                COD_PERGUNTA = perguntas[i].Codigo,
+                                DSC_RESP_DISSERTATIVA = perguntas[i].Texto,
+                                DTA_PARTICIPACAO = dataParticipacao,
+                                IND_RESPOSTA_NULA = String.IsNullOrWhiteSpace(perguntas[i].Texto) ? "S" : "N"
+                                        
+                            };
                             App.Database.SaveParticipacao(participacao);
                             break;
                         default:

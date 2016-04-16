@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace belgoquest.Droid
 {
-    [Activity(Label = "Belgo-Quest", Icon = "@drawable/Belgo01", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Belgo-Quest", Icon = "@drawable/logo", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)

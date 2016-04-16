@@ -2618,32 +2618,32 @@ namespace belgoquest.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f090047
-			public const int abc_background_cache_hint_selector_material_dark = 2131296327;
+			// aapt resource value: 0x7f09004c
+			public const int abc_background_cache_hint_selector_material_dark = 2131296332;
 			
-			// aapt resource value: 0x7f090048
-			public const int abc_background_cache_hint_selector_material_light = 2131296328;
+			// aapt resource value: 0x7f09004d
+			public const int abc_background_cache_hint_selector_material_light = 2131296333;
 			
-			// aapt resource value: 0x7f090049
-			public const int abc_color_highlight_material = 2131296329;
+			// aapt resource value: 0x7f09004e
+			public const int abc_color_highlight_material = 2131296334;
 			
 			// aapt resource value: 0x7f090009
 			public const int abc_input_method_navigation_guard = 2131296265;
 			
-			// aapt resource value: 0x7f09004a
-			public const int abc_primary_text_disable_only_material_dark = 2131296330;
+			// aapt resource value: 0x7f09004f
+			public const int abc_primary_text_disable_only_material_dark = 2131296335;
 			
-			// aapt resource value: 0x7f09004b
-			public const int abc_primary_text_disable_only_material_light = 2131296331;
+			// aapt resource value: 0x7f090050
+			public const int abc_primary_text_disable_only_material_light = 2131296336;
 			
-			// aapt resource value: 0x7f09004c
-			public const int abc_primary_text_material_dark = 2131296332;
+			// aapt resource value: 0x7f090051
+			public const int abc_primary_text_material_dark = 2131296337;
 			
-			// aapt resource value: 0x7f09004d
-			public const int abc_primary_text_material_light = 2131296333;
+			// aapt resource value: 0x7f090052
+			public const int abc_primary_text_material_light = 2131296338;
 			
-			// aapt resource value: 0x7f09004e
-			public const int abc_search_url_text = 2131296334;
+			// aapt resource value: 0x7f090053
+			public const int abc_search_url_text = 2131296339;
 			
 			// aapt resource value: 0x7f09000a
 			public const int abc_search_url_text_normal = 2131296266;
@@ -2654,11 +2654,14 @@ namespace belgoquest.Droid
 			// aapt resource value: 0x7f09000c
 			public const int abc_search_url_text_selected = 2131296268;
 			
-			// aapt resource value: 0x7f09004f
-			public const int abc_secondary_text_material_dark = 2131296335;
+			// aapt resource value: 0x7f090054
+			public const int abc_secondary_text_material_dark = 2131296340;
 			
-			// aapt resource value: 0x7f090050
-			public const int abc_secondary_text_material_light = 2131296336;
+			// aapt resource value: 0x7f090055
+			public const int abc_secondary_text_material_light = 2131296341;
+			
+			// aapt resource value: 0x7f090049
+			public const int accent = 2131296329;
 			
 			// aapt resource value: 0x7f09000d
 			public const int accent_material_dark = 2131296269;
@@ -2807,6 +2810,12 @@ namespace belgoquest.Droid
 			// aapt resource value: 0x7f090030
 			public const int material_grey_900 = 2131296304;
 			
+			// aapt resource value: 0x7f090047
+			public const int primary = 2131296327;
+			
+			// aapt resource value: 0x7f090048
+			public const int primaryDark = 2131296328;
+			
 			// aapt resource value: 0x7f090031
 			public const int primary_dark_material_dark = 2131296305;
 			
@@ -2849,23 +2858,29 @@ namespace belgoquest.Droid
 			// aapt resource value: 0x7f09003e
 			public const int secondary_text_disabled_material_light = 2131296318;
 			
+			// aapt resource value: 0x7f09004b
+			public const int splash_background = 2131296331;
+			
 			// aapt resource value: 0x7f09003f
 			public const int switch_thumb_disabled_material_dark = 2131296319;
 			
 			// aapt resource value: 0x7f090040
 			public const int switch_thumb_disabled_material_light = 2131296320;
 			
-			// aapt resource value: 0x7f090051
-			public const int switch_thumb_material_dark = 2131296337;
+			// aapt resource value: 0x7f090056
+			public const int switch_thumb_material_dark = 2131296342;
 			
-			// aapt resource value: 0x7f090052
-			public const int switch_thumb_material_light = 2131296338;
+			// aapt resource value: 0x7f090057
+			public const int switch_thumb_material_light = 2131296343;
 			
 			// aapt resource value: 0x7f090041
 			public const int switch_thumb_normal_material_dark = 2131296321;
 			
 			// aapt resource value: 0x7f090042
 			public const int switch_thumb_normal_material_light = 2131296322;
+			
+			// aapt resource value: 0x7f09004a
+			public const int window_background = 2131296330;
 			
 			static Color()
 			{
@@ -3542,49 +3557,58 @@ namespace belgoquest.Droid
 			public const int icon = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int mr_ic_cast_dark = 2130837612;
+			public const int logo = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int mr_ic_cast_light = 2130837613;
+			public const int mr_ic_cast_dark = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837614;
+			public const int mr_ic_cast_light = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int mr_ic_media_route_connecting_mono_light = 2130837615;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int mr_ic_media_route_mono_dark = 2130837616;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int mr_ic_media_route_mono_light = 2130837617;
+			public const int mr_ic_media_route_mono_dark = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int mr_ic_pause_dark = 2130837618;
+			public const int mr_ic_media_route_mono_light = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int mr_ic_pause_light = 2130837619;
+			public const int mr_ic_pause_dark = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int mr_ic_play_dark = 2130837620;
+			public const int mr_ic_pause_light = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int mr_ic_play_light = 2130837621;
+			public const int mr_ic_play_dark = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int mr_ic_settings_dark = 2130837622;
+			public const int mr_ic_play_light = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int mr_ic_settings_light = 2130837623;
-			
-			// aapt resource value: 0x7f02007a
-			public const int notification_template_icon_bg = 2130837626;
+			public const int mr_ic_settings_dark = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int roundedbg = 2130837624;
+			public const int mr_ic_settings_light = 2130837624;
+			
+			// aapt resource value: 0x7f02007d
+			public const int notification_template_icon_bg = 2130837629;
 			
 			// aapt resource value: 0x7f020079
-			public const int roundedbgdark = 2130837625;
+			public const int roundedbg = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int roundedbgdark = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int splash_logo = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int splash_screen = 2130837628;
 			
 			static Drawable()
 			{
@@ -4818,6 +4842,15 @@ namespace belgoquest.Droid
 			
 			// aapt resource value: 0x7f060001
 			public const int Base_Widget_Design_TabLayout = 2131099649;
+			
+			// aapt resource value: 0x7f06014c
+			public const int BelgoTheme = 2131099980;
+			
+			// aapt resource value: 0x7f06014b
+			public const int BelgoTheme_Base = 2131099979;
+			
+			// aapt resource value: 0x7f06014d
+			public const int BelgoTheme_Splash = 2131099981;
 			
 			// aapt resource value: 0x7f060148
 			public const int CardView = 2131099976;

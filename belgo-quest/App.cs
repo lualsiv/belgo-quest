@@ -80,7 +80,7 @@ namespace belgoquest
             InitializeViewModels();
 
             var mainPage = new belgoquest.MainPage(){
-                BackgroundColor = Color.Transparent,
+                BackgroundColor = Color.Default,
                 BackgroundImage = "Belgo01.png"
             };
 
@@ -112,13 +112,15 @@ namespace belgoquest
 
         private void InitializeRepositories()
         {
-            RegisterOnce<IPesquisaRepository>(() => new PesquisaRepository(Settings.UriWebServices, "pesquisa/fechado/nao"));
+            RegisterOnce<IPesquisaRepository>(() => new PesquisaRepository(Settings.UriWebServices, "pesquisa/fechado/sim"));
+            RegisterOnce<IParticipacaoRepository>(() => new ParticipacaoRepository(Settings.UriWebServices, "participacao"));
         }
 
         private void InitializeDataServices()
         {
             
             RegisterOnce<IPesquisaService, PesquisaService>();
+            RegisterOnce<IParticipacaoService, ParticipacaoService>();
 
         }
 

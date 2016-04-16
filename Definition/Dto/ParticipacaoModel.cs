@@ -6,48 +6,56 @@ namespace Definition.Dto
 {
     public class CAD_PARTICIPACAO
     {
+        
         public CAD_PARTICIPACAO()
         {
         }
 
         [PrimaryKey, AutoIncrement]
-        [JsonProperty]
+        [JsonIgnore]
         public int COD_PARTICIPACAO
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("idPergunta")]
         public int COD_PERGUNTA
         {
             get;
             set;
         }
 
-        [JsonProperty]
-        public int COD_RESPOSTA
+        [JsonProperty("idResposta")]
+        public int? COD_RESPOSTA
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("Descricao")]
         public string DSC_RESP_DISSERTATIVA
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("RespostaNula")]
         public string IND_RESPOSTA_NULA
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("DataParticipacao")]
         public DateTime DTA_PARTICIPACAO
+        {
+            get;
+            set;
+        }
+
+        [JsonProperty("DataSincronizacao")]
+        public DateTime DTA_SINCRONIZACAO
         {
             get;
             set;

@@ -35,12 +35,15 @@
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="Pesquisa\PesquisaRepository.cs" />
     <Compile Include="Pesquisa\Base.cs" />
+    <Compile Include="Participacao\Base.cs" />
+    <Compile Include="Participacao\ParticipacaoRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Base\" />
     <Folder Include="Extensions\" />
     <Folder Include="Pesquisa\" />
+    <Folder Include="Participacao\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

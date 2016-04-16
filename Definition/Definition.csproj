@@ -38,6 +38,8 @@
     <Compile Include="Dto\PerguntaModel.cs" />
     <Compile Include="Dto\PesquisaModel.cs" />
     <Compile Include="Dto\RespostaModel.cs" />
+    <Compile Include="Interfaces\Service\IParticipacaoService.cs" />
+    <Compile Include="Interfaces\Repository\IParticipacaoRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

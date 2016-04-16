@@ -23,6 +23,8 @@ namespace Definition.Dto
         }
 
         [JsonProperty("IdPesquisa")]
+        [ForeignKey(typeof(CAD_PESQUISA))]
+        [Indexed]
         public int COD_PESQUISA
         {
             get;
@@ -45,14 +47,6 @@ namespace Definition.Dto
 
         [JsonProperty("Ordem")]
         public int NUM_ORDEM_PEGUNTA
-        {
-            get;
-            set;
-        }
-
-        [ForeignKey(typeof(CAD_PESQUISA))]
-        [Indexed]
-        public int PesquisaId
         {
             get;
             set;

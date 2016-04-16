@@ -50,7 +50,7 @@ namespace belgoquest.ViewModel
                                         if(pesquisas.Success)
                                         {
                                             var listaExistente = App.Database.GetPesquisas();
-                                            var listaFiltrada = pesquisas.Value.Where(item=> (item.IND_FECHADO.HasValue) && !listaExistente.Any(pesq=> pesq.COD_PESQUISA == item.COD_PESQUISA));
+                                            var listaFiltrada = pesquisas.Value.Where(item=> (item.IND_FECHADO.HasValue) && !listaExistente.Any(pesq=> pesq.COD_PESQUISA == item.COD_PESQUISA)).ToList();
 
                                             int qtd = App.Database.SaveListPesquisa(listaFiltrada);
 

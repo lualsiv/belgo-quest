@@ -21,6 +21,7 @@ namespace belgoquest
             base.OnBindingContextChanged();
 
             PesquisaViewModel pesquisa = (PesquisaViewModel)BindingContext;
+
             StackLayout layout = new StackLayout
             { 
                 Padding = new Thickness(10, 10, 10, 20),
@@ -30,6 +31,12 @@ namespace belgoquest
                 }
             };
 
+            //Conteudo do ScrollView
+            StackLayout scrollContent = new StackLayout();
+
+            //Objeto Scroll
+            ScrollView scroll = new ScrollView();
+
             for (int i = 0; i < pesquisa.Perguntas.Count; i++)
             {
                 var aux = new StackLayout();
@@ -38,15 +45,6 @@ namespace belgoquest
                 switch (pesquisa.Perguntas[i].TipoPergunta)
                 {
                     case "U":
-//                        for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
-//                        {
-//                            CustomRadioButton radio = new CustomRadioButton();
-//                            radio.BindingContext = pesquisa.Perguntas[i].Respostas[j];
-//                            radio.SetBinding(CustomRadioButton.TextProperty, new Binding("Descricao", BindingMode.Default));
-//                            radio.SetBinding(CustomRadioButton.CheckedProperty, new Binding("IsChecked", BindingMode.TwoWay));
-//                            aux.Children.Add(radio);
-//                        }
-
                         BindableRadioGroup radio = new BindableRadioGroup(){ Text = "Descricao", ItemsSource = pesquisa.Perguntas[i].Respostas };
                         radio.BindingContext = pesquisa.Perguntas[i];
                         radio.SetBinding(BindableRadioGroup.SelectedIndexProperty, new Binding("SelectedIndex", BindingMode.TwoWay));
@@ -72,10 +70,16 @@ namespace belgoquest
                         aux.Children.Add(text);
                         break;
                 }
-                layout.Children.Add(aux);
+
+                //Adiciona objetos conteudo do scroll
+                scrollContent.Children.Add(aux);
             }
 
 
+            //Adiciona a lista de objetos dentro do scroll
+            scroll.Content = scrollContent;
+
+            layout.Children.Add(scroll);
 
             Button finalizar = new Button()
             { 

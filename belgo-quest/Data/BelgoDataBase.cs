@@ -51,10 +51,18 @@ namespace belgoquest
             return retorno;
         }
 
+        public IEnumerable<CAD_PARTICIPACAO> GetParticipacoes()
+        {
+            lock (locker)
+            {
+                return (from part in database.Table<CAD_PARTICIPACAO>() select part).ToList();
+            }
+        }
+
         public IEnumerable<CAD_PESQUISA> GetPesquisas()
         {
             lock (locker) {
-                return (from i in database.Table<CAD_PESQUISA>() select i).ToList();
+                return (from i in database.Table<CAD_PESQUISA>() select i);
             }
         }
 

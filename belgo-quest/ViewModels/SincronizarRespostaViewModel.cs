@@ -5,11 +5,17 @@ using System.Windows.Input;
 using PropertyChanged;
 using Xamarin.Forms;
 using Acr.UserDialogs;
+using System.Collections.Generic;
+using Definition.Dto;
+using Definition.Interfaces;
+using Definition.Model;
+using System.Linq;
 
 namespace belgoquest.ViewModel
 {
     public class SincronizarRespostaViewModel : BaseViewModel
     {
+        IParticipacaoService _participacao;
         public ObservableCollection<PesquisaListViewModel> pesquisas { get; set; }
 
         public PesquisaListViewModel SelectedPesquisa
@@ -18,8 +24,10 @@ namespace belgoquest.ViewModel
             set;
         }
 
-        public SincronizarRespostaViewModel()
+        public SincronizarRespostaViewModel(IParticipacaoService participacao)
         {
+            _participacao = participacao;
+
         }
 
         private ICommand UpLoadRespostas;
@@ -39,19 +47,39 @@ namespace belgoquest.ViewModel
                 return;
 
             IsLoading = true;
-
+            List<CAD_PARTICIPACAO> lista;
+            Result<string> retorno;
+            DateTime dataSinc = DateTime.Now;
             try
             {
                 UserDialogs.Instance.ShowLoading("Realizando upload...");
-                await Task.Delay(2000);
-                //                pesquisas.Clear();
-                //                var timesheets = await TimesheetService.GetTimesheetEntries();
-                //                foreach (var timesheet in timesheets)
-                //                {
-                //                    pesquisas.Add(new TimesheetEntryViewModel(timesheet));
-                //                }
-                UserDialogs.Instance.HideLoading();
 
+                lista = App.Database.GetParticipacoes().ToList();
+
+                foreach (var part in lista) {
+
+                    part.DTA_SINCRONIZACAO = dataSinc;
+                    retorno = await _participacao.Inserir(part);
+
+                    if(retorno.Success)
+                    {
+                        App.Database.DeleteParticipacao(part.COD_PARTICIPACAO);
+                    }
+                    else
+                    {
+                        UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.ShowError(retorno.Message);
+                        return;
+                    }
+                }
+
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.ShowSuccess("Upload realizado com sucesso!");
+            }
+            catch(Exception ex)
+            {
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.ShowError(ex.Message);
             }
             finally
             {
