@@ -41,6 +41,13 @@ namespace belgoquest
                     TargetType = typeof(ConfiguracaoViewModel)
                 });
 
+            contents.Add(new MasterPageItemModel
+                {
+                    Title = "Ajuda",
+                    IconSource = "ic_help_black_48dp.png",
+                    TargetType = typeof(AjudaViewModel)
+                });
+
             listView.ItemsSource = contents;
         }
     }

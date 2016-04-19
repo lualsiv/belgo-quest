@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="belgoquest.Ajuda">
+	<ContentPage.Content>
+		<StackLayout>
+			<Label TextColor="Gray" FontSize="16" Text="Instruções de Uso" HorizontalOptions="Center" FontAttributes="Bold" />
+			<ScrollView>
+				<StackLayout>
+					<StackLayout Padding="10, 40, 10, 40">
+						<Label TextColor="Gray" FontSize="14" Text="Realizar Pesquisa" HorizontalOptions="Start" FontAttributes="Bold" />
+						<StackLayout Padding="10, 0, 0, 0">
+							<Label TextColor="Gray" FontSize="14" Text="- Lista todas as pesquisas disponíveis para serem realizadas" HorizontalOptions="Start" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Padding="10, 40, 10, 40">
+						<Label TextColor="Gray" FontSize="14" Text="Sincronizar Pesquisas" HorizontalOptions="Start" FontAttributes="Bold" />
+						<StackLayout Padding="10, 0, 0, 0">
+							<Label TextColor="Gray" FontSize="14" Text="- Faz a sincronização com o banco de dados e efetua o download de novas pesquisas cadastradas." HorizontalOptions="Start" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Padding="10, 40, 10, 40">
+						<Label TextColor="Gray" FontSize="14" Text="Sincronizar Respostas" HorizontalOptions="Start" FontAttributes="Bold" />
+						<StackLayout Padding="10, 0, 0, 0">
+							<Label TextColor="Gray" FontSize="14" Text="- Faz a sincronização com o banco de dados e envia as respostas das pesquisas realizadas." HorizontalOptions="Start" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Padding="10, 40, 10, 40">
+						<Label TextColor="Gray" FontSize="14" Text="Configurar sincronização" HorizontalOptions="Start" FontAttributes="Bold" />
+						<StackLayout Padding="10, 0, 0, 0">
+							<Label TextColor="Gray" FontSize="14" Text="- Cadastro do endereço do servidor, que sincronizará o aplicativo ao servidor para receber pesquisas e enviar as respostas." HorizontalOptions="Start" />
+							<Label TextColor="Gray" FontSize="14" Text="- Este endereço não deve ser alterado pois pode causar mau funcionamento, exceto se solicitado pela área responsável." HorizontalOptions="Start" />
+						</StackLayout>
+					</StackLayout>
+				</StackLayout>
+			</ScrollView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
