@@ -60,6 +60,13 @@ namespace Definition.Dto
             get;
             set;
         }
+
+        [JsonProperty("Token")]
+        public string Token
+        {
+            get;
+            set;
+        }
     }
 }
 
