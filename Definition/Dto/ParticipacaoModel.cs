@@ -19,6 +19,12 @@ namespace Definition.Dto
             set;
         }
 
+        public int COD_PESQUISA
+        {
+            get;
+            set;
+        }
+
         [JsonProperty("idPergunta")]
         public int COD_PERGUNTA
         {

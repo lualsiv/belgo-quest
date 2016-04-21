@@ -24,6 +24,13 @@
 						</StackLayout>
 					</StackLayout>
 					<StackLayout Padding="10, 40, 10, 40">
+						<Label TextColor="Gray" FontSize="14" Text="Participações" HorizontalOptions="Start" FontAttributes="Bold" />
+						<StackLayout Padding="10, 0, 0, 0">
+							<Label TextColor="Gray" FontSize="14" Text="- Exibe a quantidade de cada pesquisa realizada no aplicativo Belgo desse dispositivo móvel." HorizontalOptions="Start" />
+							<Label TextColor="Gray" FontSize="14" Text="Quando efetuada a sincronização de respostas, elas são enviadas ao servidor e essa quantidade é zerada." HorizontalOptions="Start" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Padding="10, 40, 10, 40">
 						<Label TextColor="Gray" FontSize="14" Text="Configurar sincronização" HorizontalOptions="Start" FontAttributes="Bold" />
 						<StackLayout Padding="10, 0, 0, 0">
 							<Label TextColor="Gray" FontSize="14" Text="- Cadastro do endereço do servidor, que sincronizará o aplicativo ao servidor para receber pesquisas e enviar as respostas." HorizontalOptions="Start" />

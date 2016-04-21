@@ -101,6 +101,7 @@ namespace belgoquest.ViewModel
 
                             participacao = new CAD_PARTICIPACAO()
                             {
+                                COD_PESQUISA = this.Codigo,
                                 COD_PERGUNTA = perguntas[i].Codigo,
                                 COD_RESPOSTA = perguntas[i].SelectedItem == null ? default(int?) : perguntas[i].SelectedItem.Codigo,
                                 DTA_PARTICIPACAO = dataParticipacao,
@@ -119,6 +120,7 @@ namespace belgoquest.ViewModel
                             {
                                 participacao = new CAD_PARTICIPACAO()
                                 {
+                                    COD_PESQUISA = this.Codigo,
                                     COD_PERGUNTA = perguntas[i].Codigo,
                                     COD_RESPOSTA = respSelecionadas[j].Codigo,
                                     DTA_PARTICIPACAO = dataParticipacao,
@@ -131,6 +133,7 @@ namespace belgoquest.ViewModel
                         case "D":
                             participacao = new CAD_PARTICIPACAO()
                             {
+                                COD_PESQUISA = this.Codigo,
                                 COD_PERGUNTA = perguntas[i].Codigo,
                                 DSC_RESP_DISSERTATIVA = perguntas[i].Texto,
                                 DTA_PARTICIPACAO = dataParticipacao,

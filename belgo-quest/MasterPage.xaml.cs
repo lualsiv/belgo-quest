@@ -33,7 +33,14 @@ namespace belgoquest
                     IconSource = "ic_backup_black_48dp.png",
                     TargetType = typeof(SincronizarRespostaViewModel)
                 });
-            
+
+            contents.Add(new MasterPageItemModel
+                {
+                    Title = "Participações",
+                    IconSource = "ic_assignment_black_48dp.png",
+                    TargetType = typeof(RelatorioViewModel)
+                });
+
             contents.Add(new MasterPageItemModel
                 {
                     Title = "Configurar Sincronização",

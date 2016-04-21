@@ -44,6 +44,7 @@ namespace belgoquest
             ViewFactory.Register<Pesquisa, PesquisaViewModel>();
             ViewFactory.Register<SincronizarPesquisa, SincronizarPesquisaViewModel> ();
             ViewFactory.Register<SincronizarResposta, SincronizarRespostaViewModel> ();
+            ViewFactory.Register<Relatorio, RelatorioViewModel>();
             ViewFactory.Register<Configuracao, ConfiguracaoViewModel> ();
             ViewFactory.Register<Ajuda, AjudaViewModel> ();
         }

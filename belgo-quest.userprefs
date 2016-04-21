@@ -1,8 +1,8 @@
-﻿<Properties StartupItem="Droid/belgo-quest.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="Droid/belgo-quest.Droid.csproj" RefactoringSettings.EnableRefactorings="True" GitUserInfo="UsingMD">
   <DisabledProjects>
     <String>iOS/belgo-quest.iOS.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.4806671868007c1f3c1" />
   <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Droid/MainActivity.cs" Line="25" Column="60" />
@@ -10,50 +10,32 @@
       <File FileName="Definition/Dto/PesquisaModel.cs" Line="1" Column="1" />
       <File FileName="Definition/Dto/PerguntaModel.cs" Line="1" Column="1" />
       <File FileName="ApiRepository/Pesquisa/PesquisaRepository.cs" Line="1" Column="1" />
-      <File FileName="ApiRepository/Base/BaseRepository.cs" Line="1" Column="1" />
+      <File FileName="ApiRepository/Base/BaseRepository.cs" Line="74" Column="1" />
       <File FileName="belgo-quest/ViewModels/PerguntaViewModel.cs" Line="1" Column="1" />
       <File FileName="Definition/Dto/RespostaModel.cs" Line="1" Column="1" />
-      <File FileName="Definition/Dto/ParticipacaoModel.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/ViewModels/PesquisaViewModel.cs" Line="1" Column="1" />
+      <File FileName="Definition/Dto/ParticipacaoModel.cs" Line="64" Column="32" />
+      <File FileName="belgo-quest/ViewModels/PesquisaViewModel.cs" Line="92" Column="17" />
       <File FileName="ApiRepository/Extensions/Extension.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/App.cs" Line="48" Column="55" />
+      <File FileName="belgo-quest/App.cs" Line="1" Column="1" />
       <File FileName="belgo-quest/Settings/Settings.cs" Line="1" Column="1" />
       <File FileName="ApiRepository/Pesquisa/Base.cs" Line="1" Column="1" />
       <File FileName="belgo-quest/ViewModels/PesquisaListViewModel.cs" Line="1" Column="1" />
       <File FileName="belgo-quest/Views/PesquisasList.xaml" Line="1" Column="1" />
       <File FileName="belgo-quest/Views/Pesquisa.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/MainPage.xaml" Line="7" Column="27" />
-      <File FileName="belgo-quest/MasterPage.xaml" Line="13" Column="20" />
+      <File FileName="belgo-quest/MainPage.xaml" Line="1" Column="1" />
+      <File FileName="belgo-quest/MasterPage.xaml" Line="1" Column="1" />
       <File FileName="Droid/SplashActivity.cs" Line="1" Column="1" />
       <File FileName="Droid/Resources/values/style.xml" Line="1" Column="1" />
       <File FileName="Droid/Resources/drawable/splash_screen.xml" Line="1" Column="1" />
-      <File FileName="belgo-quest/MasterPage.xaml.cs" Line="51" Column="45" />
-      <File FileName="belgo-quest/ViewModels/AjudaViewModel.cs" Line="10" Column="10" />
+      <File FileName="belgo-quest/MasterPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="belgo-quest/ViewModels/AjudaViewModel.cs" Line="1" Column="1" />
       <File FileName="belgo-quest/Views/Ajuda.xaml.cs" Line="1" Column="1" />
-      <File FileName="belgo-quest/Factory/ViewFactory.cs" Line="49" Column="1" />
-      <File FileName="belgo-quest/Views/Ajuda.xaml" Line="37" Column="15" />
+      <File FileName="belgo-quest/Factory/ViewFactory.cs" Line="1" Column="1" />
+      <File FileName="belgo-quest/Views/Ajuda.xaml" Line="1" Column="1" />
+      <File FileName="belgo-quest/ViewModels/SincronizarRespostaViewModel.cs" Line="56" Column="17" />
+      <File FileName="DataService/ParticipacaoService.cs" Line="14" Column="62" />
+      <File FileName="ApiRepository/Participacao/ParticipacaoRepository.cs" Line="14" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="belgo-quest" expanded="True">
-            <Node name="FileSolution" expanded="True">
-              <Node name="/Users/macbookpro/Projects/belgo-quest/Droid/com.jidd.belgo_quest.apk" selected="True" />
-            </Node>
-            <Node name="belgo-quest" expanded="True">
-              <Node name="Factory" expanded="True" />
-              <Node name="Views" expanded="True" />
-              <Node name="MasterPage.xaml" expanded="True" />
-            </Node>
-            <Node name="belgo-quest.Droid" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
