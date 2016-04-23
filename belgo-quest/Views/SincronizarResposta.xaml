@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="belgoquest.SincronizarResposta">
 	<ContentPage.Content>
 	<StackLayout>
-			<Label Text="Sincronizar Respostas" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-			<Button Command="{Binding UpLoadRespostasCommand}" Text="Upload"/>
+			<Label Text="Sincronizar Respostas" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="18"/>
+			<Button Command="{Binding UpLoadRespostasCommand}" Text="Upload" FontSize="18"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

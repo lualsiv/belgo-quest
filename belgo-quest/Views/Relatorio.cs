@@ -29,7 +29,7 @@ namespace belgoquest
                 Padding = new Thickness(10, 10, 10, 20),
                 Children =
                 {
-                            new Label { Text = "Participações", HorizontalOptions = LayoutOptions.Center, FontSize = 18}
+                            new Label { Text = "Participações", HorizontalOptions = LayoutOptions.Center, FontSize = 22}
                 }
             };
 
@@ -43,7 +43,7 @@ namespace belgoquest
             {
                 int totalParticipacao = 0;
                 var aux = new StackLayout();
-                aux.Children.Add(new Label(){ Text = string.Format("{0}-({1})", pesquisas.Contents[i].NOM_PESQUISA, TotalParticipacao(pesquisas.Contents[i])) });
+                aux.Children.Add(new Label(){ Text = string.Format("{0}-({1})", pesquisas.Contents[i].NOM_PESQUISA, TotalParticipacao(pesquisas.Contents[i])), FontSize=18});
 
                 //Adiciona objetos conteudo do scroll
                 scrollContent.Children.Add(aux);

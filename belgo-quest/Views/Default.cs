@@ -12,7 +12,7 @@ namespace belgoquest
             { 
                 Children =
                 {
-                            new Label { Text = "BEM VINDO AO BELGO QUEST", HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand}
+                            new Label { Text = "BEM VINDO AO BELGO QUEST", HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand, FontSize=22}
                 }
             };
         }

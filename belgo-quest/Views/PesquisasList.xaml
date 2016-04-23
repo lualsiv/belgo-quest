@@ -5,9 +5,9 @@
 			 xmlns:custom="clr-namespace:belgoquest.CustomControls;assembly=belgo-quest">
 	<ContentPage.Content>
 		<StackLayout>
-			<Label Text="Pesquisas" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"/>
+			<Label Text="Pesquisas" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" FontSize="22"/>
 			<ScrollView Orientation = "Vertical" VerticalOptions="StartAndExpand">
-				<custom:BindableRadioGroup HorizontalOptions="CenterAndExpand" ItemsSource="{Binding Contents}" SelectedIndex="{Binding SelectedIndex}" VerticalOptions="Start" Text="Nome"/>
+				<custom:BindableRadioGroup HorizontalOptions="CenterAndExpand" ItemsSource="{Binding Contents}" SelectedIndex="{Binding SelectedIndex}" VerticalOptions="Start" Text="Nome" FontSize="18"/>
 	<!--		<ListView ItemsSource="{Binding Contents}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
@@ -18,7 +18,7 @@
 					</ListView.ItemTemplate>
 				</ListView>-->
 			</ScrollView>
-			<Button x:Name="btnContinuar" Text="Continuar" VerticalOptions="End" HorizontalOptions="Center" Command="{Binding ContinueCommand}"/>
+			<Button x:Name="btnContinuar" Text="Continuar" VerticalOptions="End" Command="{Binding ContinueCommand}" FontSize="18"/>
 		</StackLayout>
 
 

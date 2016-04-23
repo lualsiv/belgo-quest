@@ -5,8 +5,8 @@
 			 xmlns:local="clr-namespace:belgoquest;assembly=belgo-quest">
 	<ContentPage.Content>
 	<StackLayout>
-			<Label Text="Configurar Sincronização"/>
-			<Label Text="Endereço dos serviços:"/>
+			<Label Text="Configurar Sincronização" FontSize="22" HorizontalOptions="Center"/>
+			<Label Text="Endereço dos serviços:" FontSize="18"/>
 			<Entry Text="{Binding Valor}">
 				<Entry.Behaviors>
 					<local:UrlValidatorBehavior x:Name="urlValidator"/>
@@ -15,7 +15,7 @@
 			<Button Text="Salvar" 
 					VerticalOptions="End" 
 					Command="{Binding UpdateCommand}" 
-					IsEnabled="{Binding Source={x:Reference urlValidator}, Path=IsValid}"/>
+					IsEnabled="{Binding Source={x:Reference urlValidator}, Path=IsValid}" FontSize="18"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

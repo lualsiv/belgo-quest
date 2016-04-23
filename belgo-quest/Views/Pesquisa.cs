@@ -27,7 +27,7 @@ namespace belgoquest
                 Padding = new Thickness(10, 10, 10, 20),
                 Children =
                 {
-                    new Label { Text = pesquisa.Nome }
+                    new Label { Text = pesquisa.Nome, FontSize = 22 }
                 }
             };
 
@@ -39,13 +39,13 @@ namespace belgoquest
 
             for (int i = 0; i < pesquisa.Perguntas.Count; i++)
             {
-                var aux = new StackLayout();
-                aux.Children.Add(new Label(){ Text = pesquisa.Perguntas[i].Descricao });
+                var aux = new StackLayout(){Padding = new Thickness(0, 30, 0, 0)};
+                aux.Children.Add(new Label(){ Text = pesquisa.Perguntas[i].Descricao, FontSize = 18 });
 
                 switch (pesquisa.Perguntas[i].TipoPergunta)
                 {
                     case "U":
-                        BindableRadioGroup radio = new BindableRadioGroup(){ Text = "Descricao", ItemsSource = pesquisa.Perguntas[i].Respostas };
+                        BindableRadioGroup radio = new BindableRadioGroup(){ Text = "Descricao", FontSize = 18, ItemsSource = pesquisa.Perguntas[i].Respostas };
                         radio.BindingContext = pesquisa.Perguntas[i];
                         radio.SetBinding(BindableRadioGroup.SelectedIndexProperty, new Binding("SelectedIndex", BindingMode.TwoWay));
                         radio.SetBinding(BindableRadioGroup.SelectedItemProperty, new Binding("SelectedItem", BindingMode.TwoWay));
@@ -55,7 +55,7 @@ namespace belgoquest
                     case "M":
                         for (int j = 0; j < pesquisa.Perguntas[i].Respostas.Count; j++)
                         {
-                            CheckBox check = new CheckBox();
+                            CheckBox check = new CheckBox(){ FontSize = 18 };
                             check.BindingContext = pesquisa.Perguntas[i].Respostas[j];
                             check.SetBinding(CheckBox.DefaultTextProperty, new Binding("Descricao", BindingMode.Default));
                             check.SetBinding(CheckBox.CheckedProperty, new Binding("IsChecked", BindingMode.TwoWay));
@@ -83,9 +83,10 @@ namespace belgoquest
 
             Button finalizar = new Button()
             { 
-                    Text = "Finalizar",
-                    VerticalOptions = LayoutOptions.End,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
+                Text = "Finalizar",
+                VerticalOptions = LayoutOptions.End,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                FontSize = 18
             };
 
             finalizar.SetBinding(Button.CommandProperty, new Binding("FinalizarCommand", BindingMode.Default));

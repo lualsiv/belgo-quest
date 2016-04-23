@@ -8,7 +8,7 @@
 			 BackgroundColor="Gray">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="FillAndExpand">
-			<ListView x:Name="listView" VerticalOptions="FillAndExpand" >
+			<ListView x:Name="listView" VerticalOptions="FillAndExpand">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" TextColor="White"/>
